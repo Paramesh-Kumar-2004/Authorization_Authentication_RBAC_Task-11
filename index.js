@@ -9,6 +9,9 @@ const app = express();
 dotenv.config();
 
 
+import AuthRoutes from "./src/Routes/UserRoutes.js"
+
+
 app.use(cors());
 app.use(express.json());
 
@@ -21,6 +24,7 @@ app.get('/', (req, res) => {
 });
 
 
+app.use("/api/auth", AuthRoutes);
 
 
 app.listen(process.env.PORT || 3000, () => {
