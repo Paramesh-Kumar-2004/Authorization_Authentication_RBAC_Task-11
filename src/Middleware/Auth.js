@@ -16,3 +16,15 @@ export const AuthMiddleware = (req, res, next) => {
         return res.status(401).json({ message: "Invalid Token" });
     }
 };
+
+
+export const Authorization = (...roles) => {
+    return (req, res, next) => {
+        if (!roles.includes(req.user.role)) {
+            return res.status(404).json({
+                message: "Only Admin Can Access"
+            })
+        }
+        next()
+    }
+}

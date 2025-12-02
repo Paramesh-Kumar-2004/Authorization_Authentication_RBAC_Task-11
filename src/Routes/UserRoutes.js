@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.post("/register", RegisterUser);
 router.post("/login", LoginUser);
-router.get("/profile", AuthMiddleware, GetUserProfile);
+router.get("/profile", AuthMiddleware, Authorization("admin"), GetUserProfile);
 
 
 export default router;
