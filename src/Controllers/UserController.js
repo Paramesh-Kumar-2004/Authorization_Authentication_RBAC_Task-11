@@ -30,6 +30,7 @@ export const RegisterUser = async (req, res) => {
             token: generateToken(user._id)
         });
     } catch (error) {
+        console.log(error);
         res.status(500).json({ message: error.message });
     }
 };
