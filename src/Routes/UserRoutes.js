@@ -4,7 +4,7 @@ import {
     LoginUser,
     GetUserProfile
 } from "../Controllers/UserController.js";
-import { AuthMiddleware } from "../Middleware/Auth.js";
+import { AuthMiddleware, Authorization } from "../Middleware/Auth.js";
 
 
 
