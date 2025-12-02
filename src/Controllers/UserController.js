@@ -47,8 +47,11 @@ export const LoginUser = async (req, res) => {
         const isMatch = await user.matchPassword(password);
         if (!isMatch) return res.status(400).json({ message: "Invalid password" });
 
+        console.log(user);
+
         return res.json({
             message: "Login successful",
+            // user,
             token: generateToken(user._id)
         });
     } catch (error) {
